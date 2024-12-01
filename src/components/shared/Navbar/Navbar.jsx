@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { pathname } = useLocation();
 
     const links = <>
         <li>
@@ -25,7 +26,7 @@ const Navbar = () => {
     return (
         <header className="effect">
             <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
-                <nav className="relative flex items-center justify-between">
+                <nav className="relative flex items-center justify-between h-12">
                     <Link
                         to="/"
                         className="inline-flex items-center"
@@ -51,14 +52,14 @@ const Navbar = () => {
                     </Link>
                     <ul className="items-center hidden space-x-8 lg:flex">
                         {links}
-                        <li>
+                        {pathname == "/" && <li>
                             <NavLink
                                 to="/documentation"
                                 className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded-xl effect hovers"
                             >
                                 Get started
                             </NavLink>
-                        </li>
+                        </li>}
                     </ul>
                     <div className="lg:hidden">
                         <button
@@ -130,14 +131,14 @@ const Navbar = () => {
                                     <nav>
                                         <ul className="space-y-4">
                                             {links}
-                                            <li>
+                                            {pathname == "/" && <li>
                                                 <NavLink
                                                     to="/documentation"
                                                     className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded-xl effect hovers"
                                                 >
                                                     Get started
                                                 </NavLink>
-                                            </li>
+                                            </li>}
                                         </ul>
                                     </nav>
                                 </div>
