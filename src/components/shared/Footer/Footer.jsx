@@ -29,7 +29,7 @@ const Footer = () => {
                                 <rect x="14" y="11" width="7" height="12" />
                             </svg>
                             <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                                Deb Components
+                            <span className="text-[#2BA9E1]">Deb</span> Components
                             </span>
                         </Link>
                         <p className="my-4 md:pr-4 lg:max-w-[600px]">Weve got 100+ building blocks that can help you create almost any type of a website with just a couple of clicks.</p>

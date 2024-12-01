@@ -47,7 +47,7 @@ const Navbar = () => {
                             <rect x="14" y="11" width="7" height="12" />
                         </svg>
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                            Deb Components
+                            <span className="text-[#2BA9E1]">Deb</span> Components
                         </span>
                     </Link>
                     <ul className="items-center hidden space-x-8 lg:flex">
@@ -55,7 +55,7 @@ const Navbar = () => {
                         {pathname == "/" && <li>
                             <NavLink
                                 to="/documentation"
-                                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded-xl effect hovers"
+                                className="inline-flex items-center justify-center h-12 px-6 font-bold tracking-wide text-[#2BA9E1]  transition duration-200 rounded-xl effect hovers"
                             >
                                 Get started
                             </NavLink>
@@ -134,7 +134,7 @@ const Navbar = () => {
                                             {pathname == "/" && <li>
                                                 <NavLink
                                                     to="/documentation"
-                                                    className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded-xl effect hovers"
+                                                    className="inline-flex items-center justify-center w-full h-12 px-6 font-bold tracking-wide text-[#2BA9E1] transition duration-200 rounded-xl effect hovers"
                                                 >
                                                     Get started
                                                 </NavLink>
