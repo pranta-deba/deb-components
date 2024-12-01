@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  font-family: "Parkinsans", sans-serif;
+}
+html {
+  background: #e0e4e7;
+}
+.effect {
+    background: #E0E4E7;
+    box-shadow: 5px 5px 13px #b8c7dd,
+        -5px -5px 13px #ffffff;
+        transition: all 0.5s;
+}
+
+.effect-inner {
+    background: #E0E4E7;
+    box-shadow: inset 4px 3px 3px 0px #b8c7dd, inset -2px -4px 4px 0px #fff;
+}
+.hovers:hover{
+    background: #E0E4E7;
+    box-shadow: inset 4px 3px 3px 0px #b8c7dd, inset -2px -4px 4px 0px #fff;
+}
