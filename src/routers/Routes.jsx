@@ -9,6 +9,9 @@ export const router = createBrowserRouter([
         errorElement: "Error Page",
         children: [
             { path: "/", element: <Home /> },
+            { path: "/components", element: "components" },
+            { path: "/templates", element: "templates" },
+            { path: "/documentation", element: "Documentation" },
         ],
     },
 ]);

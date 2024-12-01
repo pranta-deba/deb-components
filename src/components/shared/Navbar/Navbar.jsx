@@ -7,34 +7,18 @@ const Navbar = () => {
     const links = <>
         <li>
             <NavLink
-                to="/"
+                to="/components"
                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
-                Product
+                Components
             </NavLink>
         </li>
         <li>
             <NavLink
-                to="/"
+                to="/templates"
                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
-                Features
-            </NavLink>
-        </li>
-        <li>
-            <NavLink
-                to="/"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-                Pricing
-            </NavLink>
-        </li>
-        <li>
-            <NavLink
-                to="/about"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-                About us
+                Templates
             </NavLink>
         </li>
     </>
@@ -68,10 +52,10 @@ const Navbar = () => {
                     {links}
                     <li>
                         <NavLink
-                            to="/signup"
+                            to="/documentation"
                             className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded-xl effect hovers"
                         >
-                            Sign up
+                            Get started
                         </NavLink>
                     </li>
                 </ul>
@@ -147,10 +131,10 @@ const Navbar = () => {
                                         {links}
                                         <li>
                                             <NavLink
-                                                to="/"
+                                                to="/documentation"
                                                 className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded-xl effect hovers"
                                             >
-                                                Sign up
+                                                Get started
                                             </NavLink>
                                         </li>
                                     </ul>
