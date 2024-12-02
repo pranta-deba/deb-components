@@ -12,7 +12,7 @@ const Banner = () => {
                     <p className="mt-5 sm:mt-10  text-gray-400 font-normal  text-sm sm:text-lg">A professonal website drives sales. Create a beautiful website to impress and engage new customers and establish your business online </p>
                 </div>
                 <div className="text-center md:text-right">
-                    <button className="inline-flex items-center justify-center h-12 px-6 font-semibold tracking-wide text-black  transition duration-200 rounded-xl effect hovers">Browse free components</button>
+                    <button className="inline-flex items-center justify-center h-12 px-6 font-semibold tracking-wide text-[#2BA9E1] transition duration-200 rounded-xl effect hovers">Browse free components</button>
                 </div>
             </div>
         </div>
