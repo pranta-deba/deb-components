@@ -1,10 +1,10 @@
-import Banner from "../../components/shared/Banner/Banner";
-
-
+import Banner from "../../components/Banner/Banner";
+import Compatible from "../../components/Compatible/Compatible";
 const Home = () => {
     return (
         <div>
             <Banner/>
+            <Compatible/>
         </div>
     );
 };
