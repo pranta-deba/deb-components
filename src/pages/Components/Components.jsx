@@ -12,22 +12,22 @@ const Components = () => {
     console.log(item);
 
     return (
-        <div className="space-y-10">
-            <div className="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-end gap-4 mb-20">
+        <div className="space-y-2 md:space-y-10">
+            <div className="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-end gap-4 mb-8 md:mb-20">
                 <div className="text-center md:text-start">
                     <h1 className="text-gray-800 text-3xl font-bold">Components</h1>
                     <p className="text-gray-500">{"100"} components in {"14"} categories</p>
                 </div>
                 <div>
-                    <input onKeyUp={handleFilter} type="text" placeholder="Filter Categories" className="p-2 outline-none border-none text-gray-500 effect-inner" />
+                    <input onKeyUp={handleFilter} type="text" placeholder="Filter Categories" className="p-2 outline-none border-none text-gray-500 effect-inner rounded-md" />
                 </div>
             </div>
-            <div className="flex justify-center items-center gap-3 flex-wrap effect-inner p-4 md:p-6">
+            <div className="flex justify-center items-center gap-3 flex-wrap effect-inner p-4 md:p-6 rounded-md">
                 {
                     categories.map((cat, i) => <button key={i + 1} onClick={() => handleClickButton(cat)} className={`${item === cat ? "effect-inner text-[#2BA9E1]" : "effect"} hovers p-2 rounded-md capitalize font-semibold`}>{cat}</button>)
                 }
             </div>
-            <div className="effect-inner p-4 md:p-6">
+            <div className="effect-inner p-4 md:p-6 rounded-md">
                 {!item && <div className="flex flex-col justify-center items-center">
                     <div className="space-x-4 mb-4">
                         <button className="effect hovers p-2 rounded-md capitalize">Github</button>
@@ -36,7 +36,7 @@ const Components = () => {
                     <img src="./banner.svg" alt="" className="" />
                 </div>}
                 <div>
-                    <h2 className="text-gray-800 text-2xl font-bold">{item}</h2>
+                    <h2 className="text-gray-800 text-xl font-bold text-center">{item} components</h2>
                 </div>
             </div>
         </div>
