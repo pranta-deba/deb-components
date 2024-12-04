@@ -19,6 +19,10 @@ const Loaders = () => {
             name: 'tab3',
             tabs: "previews"
         },
+        {
+            name: 'tab4',
+            tabs: "previews"
+        },
     ])
     const [copied1, setCopied1] = useState(false);
     const [copied2, setCopied2] = useState(false);
@@ -112,7 +116,7 @@ const Loaders = () => {
             </div>
             {/* Loader 1 end*/}
 
-            {/* Loader 2*/}
+            {/* Loader 2 */}
             <div className="border-2 border-blue-300 p-4 md:p-6 rounded-md">
                 <div className="flex gap-3">
                     <button
@@ -179,7 +183,7 @@ const Loaders = () => {
             </div>
             {/* Loader 2 end*/}
 
-            {/* Loader 3*/}
+            {/* Loader 3 */}
             <div className="border-2 border-blue-300 p-4 md:p-6 rounded-md">
                 <div className="flex gap-3">
                     <button
@@ -245,6 +249,73 @@ const Loaders = () => {
                 </div>
             </div>
             {/* Loader 3 end*/}
+
+            {/* Loader 4 */}
+            <div className="border-2 border-blue-300 p-4 md:p-6 rounded-md">
+                <div className="flex gap-3">
+                    <button
+                        onClick={() => handleTabs('tab4', 'previews')}
+                        className={`px-3 font-semibold py-2 rounded-md text-xs md:text-base ${tabs[3].tabs === "previews" ? "effect-inner text-[#2BA9E1]" : "effect"}`}>Previews</button>
+                    <button
+                        onClick={() => handleTabs('tab4', 'html css')}
+                        className={`px-3 font-semibold py-2 rounded-md text-xs md:text-base ${tabs[3].tabs === "html css" ? "effect-inner text-[#2BA9E1]" : "effect"}`}>HTML & CSS</button>
+                    <button
+                        onClick={() => handleTabs('tab4', 'react')}
+                        className={`px-3 font-semibold py-2 rounded-md text-xs md:text-base ${tabs[3].tabs === "react" ? "effect-inner text-[#2BA9E1]" : "effect"}`}>React</button>
+                </div>
+                <div className="mt-4 w-full min-h-[100px] flex justify-center items-center">
+                    {tabs[3].tabs === "previews" && <div className="loader-4"></div>}
+                    {tabs[3].tabs === "html css" && <div className="w-full min-h-[100px] max-h-[500px] overflow-y-auto p-4 scrollBar">
+                        <div className="space-y-3">
+                            <div className="flex justify-between">
+                                <p className="underline italic">index.html</p>
+                                <button title="copy code"
+                                    onClick={() => copyToClipboard(loader4_html, 'copied1')}>
+                                    {copied1 ? <FaCheck /> : <FaCopy />}
+                                </button>
+                            </div>
+                            <SyntaxHighlighter language="java" style={vs} customStyle={customColorInode}>
+                                {loader4_html}
+                            </SyntaxHighlighter>
+                            <div className="flex justify-between">
+                                <p className="underline italic">style.css</p>
+                                <button title="copy code"
+                                    onClick={() => copyToClipboard(loader4_css, 'copied2')}>
+                                    {copied2 ? <FaCheck /> : <FaCopy />}
+                                </button>
+                            </div>
+                            <SyntaxHighlighter language="html" style={vs} customStyle={customColorInode}>
+                                {loader4_css}
+                            </SyntaxHighlighter>
+                        </div>
+                    </div>}
+                    {tabs[3].tabs === "react" && <div className="w-full min-h-[100px] max-h-[500px] overflow-y-auto p-4 scrollBar">
+                        <div className="space-y-3">
+                            <div className="flex justify-between">
+                                <p className="underline italic">Loader.jsx</p>
+                                <button title="copy code"
+                                    onClick={() => copyToClipboard(loader4_react, 'copied1')}>
+                                    {copied1 ? <FaCheck /> : <FaCopy />}
+                                </button>
+                            </div>
+                            <SyntaxHighlighter language="java" style={vs} customStyle={customColorInode}>
+                                {loader4_react}
+                            </SyntaxHighlighter>
+                            <div className="flex justify-between">
+                                <p className="underline italic">style.css</p>
+                                <button title="copy code"
+                                    onClick={() => copyToClipboard(loader4_css, 'copied2')}>
+                                    {copied2 ? <FaCheck /> : <FaCopy />}
+                                </button>
+                            </div>
+                            <SyntaxHighlighter language="htnl" style={vs} customStyle={customColorInode}>
+                                {loader4_css}
+                            </SyntaxHighlighter>
+                        </div>
+                    </div>}
+                </div>
+            </div>
+            {/* Loader 4 end*/}
         </div>
     );
 };
@@ -370,6 +441,53 @@ import "./style.css"; // Import the CSS file
 
 const Loader = () => {
   return <div class="loader-3"></div>; // Apply styles via className
+};
+
+export default Loader;
+`
+
+
+const loader4_html = `<div class="loader-4"></div>`
+const loader4_css = `.loader-4 {
+    position: absolute;
+    scale: 0.45;
+    width: 44.8px;
+    height: 44.8px;
+    color: #2ba9e1;
+    background: linear-gradient(currentColor 0 0),
+      linear-gradient(currentColor 0 0), linear-gradient(currentColor 0 0),
+      linear-gradient(currentColor 0 0);
+    background-size: 23.4px 23.4px;
+    background-repeat: no-repeat;
+    animation: shapes-53h9rpmd 2s infinite cubic-bezier(0.3, 1, 0, 1);
+  }
+  
+  @keyframes shapes-53h9rpmd {
+    0% {
+      background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    }
+  
+    33% {
+      background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+      width: 67.2px;
+      height: 67.2px;
+    }
+  
+    66% {
+      background-position: 100% 0, 100% 100%, 0 100%, 0 0;
+      width: 67.2px;
+      height: 67.2px;
+    }
+  
+    100% {
+      background-position: 100% 0, 100% 100%, 0 100%, 0 0;
+    }
+  }`
+const loader4_react = `import React from "react";
+import "./style.css"; // Import the CSS file
+
+const Loader = () => {
+  return <div class="loader-4"></div>; // Apply styles via className
 };
 
 export default Loader;
