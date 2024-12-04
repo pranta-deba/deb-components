@@ -17,7 +17,7 @@ const Loaders = () => {
     return (
         <div className="">
 
-            <div className="effect-inner p-4 md:p-6 rounded-md">
+            <div className="border-2 border-blue-300 p-4 md:p-6 rounded-md">
                 <div className="flex gap-3">
                     <button
                         onClick={() => handleTabs('tab1', 'previews')}
@@ -31,12 +31,18 @@ const Loaders = () => {
                 </div>
                 <div className="mt-4 w-full min-h-[100px] flex justify-center items-center">
                     {/* <div className="loader-1"></div> */}
-                    <div className="w-full min-h-[100px] max-h-[500px] overflow-y-auto p-4">
-                        <div>
-                            <SyntaxHighlighter language="html" style={vs} useInlineStyles>
+                    <div className="w-full min-h-[100px] max-h-[500px] overflow-y-auto p-4 scrollBar">
+                        <div className="space-y-3">
+                            <div>
+                                <p className="underline italic">index.html</p>
+                            </div>
+                            <SyntaxHighlighter language="java" style={vs} customStyle={customColorInode}>
                                 {loader1_html}
                             </SyntaxHighlighter>
-                            <SyntaxHighlighter language="html" style={vs}>
+                            <div>
+                                <p className="underline italic">style.css</p>
+                            </div>
+                            <SyntaxHighlighter language="htnl" style={vs} customStyle={customColorInode}>
                                 {loader1_react}
                             </SyntaxHighlighter>
                         </div>
@@ -48,8 +54,13 @@ const Loaders = () => {
     );
 };
 
-const loader1_html= `<div class="loader-1"></div>`
-const loader1_react= `.loader-1 {
+const customColorInode = {
+    backgroundColor: "transparent",
+    boxShadow: 'inset 4px 3px 3px 0px #b8c7dd, inset -2px -4px 4px 0px #fff'
+
+}
+const loader1_html = `<div class="loader-1"></div>`
+const loader1_react = `.loader-1 {
     scale: 0.45;
     width: 22.4px;
     height: 22.4px;

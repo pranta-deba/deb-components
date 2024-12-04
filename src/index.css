@@ -2,12 +2,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
   font-family: "Parkinsans", sans-serif;
 }
+
 html {
   background: #e0e4e7;
 }
+
 .effect {
   background: #e0e4e7;
   box-shadow: 5px 5px 13px #b8c7dd, -5px -5px 13px #ffffff;
@@ -18,12 +21,32 @@ html {
   background: #e0e4e7;
   box-shadow: inset 4px 3px 3px 0px #b8c7dd, inset -2px -4px 4px 0px #fff;
 }
+
 .hovers:hover {
   background: #e0e4e7;
   box-shadow: inset 4px 3px 3px 0px #b8c7dd, inset -2px -4px 4px 0px #fff;
 }
+
 .hovers2:hover {
   background: #e0e4e7;
   box-shadow: 5px 5px 13px #b8c7dd, -5px -5px 13px #ffffff;
   transition: all 0.5s;
+}
+
+.scrollBar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollBar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+.scrollBar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.scrollBar::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
