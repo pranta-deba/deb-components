@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Loaders from "../../components/ui/loaders/Loaders";
 
 const Components = () => {
     const [item, setItem] = useState('');
@@ -36,7 +37,10 @@ const Components = () => {
                     <img src="./banner.svg" alt="" className="" />
                 </div>}
                 <div>
-                    <h2 className="text-gray-800 text-xl font-bold text-center">{item} components</h2>
+                    <h2 className="text-gray-800 text-xl font-bold text-center capitalize">{item} component</h2>
+                    <div>
+                        <Loaders />
+                    </div>
                 </div>
             </div>
         </div>
