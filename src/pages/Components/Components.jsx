@@ -28,20 +28,17 @@ const Components = () => {
                     categories.map((cat, i) => <button key={i + 1} onClick={() => handleClickButton(cat)} className={`${item === cat ? "effect-inner text-[#2BA9E1]" : "effect"} hovers p-2 rounded-md capitalize font-semibold`}>{cat}</button>)
                 }
             </div>
-            <div className="effect-inner p-4 md:p-6 rounded-md">
-                {!item && <div className="flex flex-col justify-center items-center">
+            {/* {!item &&  <div className="effect-inner p-4 md:p-6 rounded-md">
+                <div className="flex flex-col justify-center items-center">
                     <div className="space-x-4 mb-4">
                         <button className="effect hovers p-2 rounded-md capitalize">Github</button>
                         <button className="effect hovers p-2 rounded-md capitalize">Feedback</button>
                     </div>
                     <img src="./banner.svg" alt="" className="" />
-                </div>}
-                <div>
-                    <h2 className="text-gray-800 text-xl font-bold text-center capitalize">{item} component</h2>
-                    <div>
-                        <Loaders />
-                    </div>
                 </div>
+            </div>} */}
+            <div>
+                <Loaders />
             </div>
         </div>
     );
