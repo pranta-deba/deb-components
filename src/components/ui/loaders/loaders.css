@@ -1,33 +1,94 @@
 /* Loader 1 start */
 .loader-1 {
-    scale: 0.45;
-    width: 22.4px;
-    height: 22.4px;
-    border-radius: 100px;
-    background: #2BA9E1;
-    box-shadow: 0 0 0 0 #2BA9E1A4;
-    animation: loader1 1.5s infinite linear;
+  scale: 0.45;
+  width: 22.4px;
+  height: 22.4px;
+  border-radius: 100px;
+  background: #2ba9e1;
+  box-shadow: 0 0 0 0 #2ba9e1a4;
+  animation: loader1 1.5s infinite linear;
+  position: relative;
+}
+
+.loader-1:before,
+.loader-1:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 #2ba9e1a4;
+  animation: inherit;
+  animation-delay: -0.5s;
+}
+
+.loader-1:after {
+  animation-delay: -1s;
+}
+
+@keyframes loader1 {
+  100% {
+    box-shadow: 0 0 0 44.8px #0000;
+  }
+}
+/* Loader 1 end */
+
+/* Loader 2 start */
+.loader-2 {
+  scale: 0.7;
+  translate: 0 2px;
+  width: 32px;
+  height: 62px;
+  display: inline-block;
+  position: relative;
+  border: 2px solid #2BA9E1;
+  box-sizing: border-box;
+  animation: animloader 2s linear infinite alternate;
+  color: #2BA9E1;
+  border-radius: 0 0 4px 4px;
+  transform: perspective(140px) rotateX(-45deg);
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: 0 0 inset;
+  }
+  100% {
+    box-shadow: 0 -70px inset;
+  }
+}
+/* Loader 2 end */
+
+/* Loader 3 start */
+.loader-3 {
+    scale: 0.7;
+    width: 48px;
+    height: 48px;
+    border: 2px solid #2BA9E1;
+    border-radius: 50%;
+    display: inline-block;
     position: relative;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
   }
   
-  .loader-1:before,
-  .loader-1:after {
+  .loader-3::after {
     content: "";
+    box-sizing: border-box;
     position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    box-shadow: 0 0 0 0 #2BA9E1A4;
-    animation: inherit;
-    animation-delay: -0.5s;
+    left: 50%;
+    top: 0;
+    background: #2BA9E1;
+    width: 3px;
+    height: 24px;
+    transform: translateX(-50%);
   }
   
-  .loader-1:after {
-    animation-delay: -1s;
-  }
-  
-  @keyframes loader1 {
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
     100% {
-      box-shadow: 0 0 0 44.8px #0000;
+      transform: rotate(360deg);
     }
   }
-/* Loader 1 end */
+/* Loader 3 end */

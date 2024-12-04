@@ -10,7 +10,6 @@ const Components = () => {
     const handleClickButton = (item) => {
         setItem(item);
     }
-    console.log(item);
 
     return (
         <div className="space-y-2 md:space-y-10">
