@@ -25,7 +25,7 @@ const Components = () => {
             </div>
             <div className="flex justify-center items-center gap-3 flex-wrap effect-inner p-4 md:p-6 rounded-md">
                 {
-                    categories.map((cat, i) => <button key={i + 1} onClick={() => handleClickButton(cat)} className={`${item === cat ? "effect-inner text-[#2BA9E1]" : "effect"} hovers p-2 rounded-md capitalize font-semibold`}>{cat}</button>)
+                    categories.map((cat, i) => <button key={i + 1} onClick={() => handleClickButton(cat)} className={`${item === cat ? "effect-inner text-[#2BA9E1]" : "effect"} hovers p-2 rounded-md capitalize font-semibold text-xs md:text-base`}>{cat}</button>)
                 }
             </div>
             {/* {!item &&  <div className="effect-inner p-4 md:p-6 rounded-md">
