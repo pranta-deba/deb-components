@@ -595,6 +595,76 @@ const Loaders = () => {
                 </div>
             </div>
             {/* Loader 7 end*/}
+
+
+            {/* Loader 8 */}
+            <div className="border-2 border-blue-300 p-4 md:p-6 rounded-md">
+                <div className="flex gap-3">
+                    <button
+                        onClick={() => handleTabs('tab8', 'previews')}
+                        className={`px-3 font-semibold py-2 rounded-md text-xs md:text-base ${tabs[7].tabs === "previews" ? "effect-inner text-[#2BA9E1]" : "effect"}`}>Previews</button>
+                    <button
+                        onClick={() => handleTabs('tab8', 'html css')}
+                        className={`px-3 font-semibold py-2 rounded-md text-xs md:text-base ${tabs[7].tabs === "html css" ? "effect-inner text-[#2BA9E1]" : "effect"}`}>HTML & CSS</button>
+                    <button
+                        onClick={() => handleTabs('tab8', 'react')}
+                        className={`px-3 font-semibold py-2 rounded-md text-xs md:text-base ${tabs[7].tabs === "react" ? "effect-inner text-[#2BA9E1]" : "effect"}`}>React</button>
+                </div>
+                <div className="mt-4 w-full min-h-[100px] flex justify-center items-center">
+                    {tabs[7].tabs === "previews" && <span className="loader-8"></span>}
+                    {tabs[7].tabs === "html css" && <div className="w-full min-h-[100px] max-h-[500px] overflow-y-auto p-4 scrollBar">
+                        <div className="space-y-3">
+                            <div className="flex justify-between">
+                                <p className="underline italic">index.html</p>
+                                <button title="copy code"
+                                    onClick={() => copyToClipboard(loader8_html, 'copied1')}>
+                                    {copied1 ? <FaCheck /> : <FaCopy />}
+                                </button>
+                            </div>
+                            <SyntaxHighlighter language="java" style={vs} customStyle={customColorInode}>
+                                {loader8_html}
+                            </SyntaxHighlighter>
+                            <div className="flex justify-between">
+                                <p className="underline italic">style.css</p>
+                                <button title="copy code"
+                                    onClick={() => copyToClipboard(loader8_css, 'copied2')}>
+                                    {copied2 ? <FaCheck /> : <FaCopy />}
+                                </button>
+                            </div>
+                            <SyntaxHighlighter language="html" style={vs} customStyle={customColorInode}>
+                                {loader8_css}
+                            </SyntaxHighlighter>
+                        </div>
+                    </div>}
+                    {tabs[7].tabs === "react" && <div className="w-full min-h-[100px] max-h-[500px] overflow-y-auto p-4 scrollBar">
+                        <div className="space-y-3">
+                            <div className="flex justify-between">
+                                <p className="underline italic">Loader.jsx</p>
+                                <button title="copy code"
+                                    onClick={() => copyToClipboard(loader8_react, 'copied1')}>
+                                    {copied1 ? <FaCheck /> : <FaCopy />}
+                                </button>
+                            </div>
+                            <SyntaxHighlighter language="java" style={vs} customStyle={customColorInode}>
+                                {loader8_react}
+                            </SyntaxHighlighter>
+                            <div className="flex justify-between">
+                                <p className="underline italic">style.css</p>
+                                <button title="copy code"
+                                    onClick={() => copyToClipboard(loader8_css, 'copied2')}>
+                                    {copied2 ? <FaCheck /> : <FaCopy />}
+                                </button>
+                            </div>
+                            <SyntaxHighlighter language="htnl" style={vs} customStyle={customColorInode}>
+                                {loader8_css}
+                            </SyntaxHighlighter>
+                        </div>
+                    </div>}
+                </div>
+            </div>
+            {/* Loader 8 end*/}
+
+            
         </div >
     );
 };
@@ -1072,7 +1142,7 @@ const loader7_css = `.loader-7 {
   }
 }`;
 const loader7_react = `import React from "react";
-import "./Loader.css"; // External CSS file
+import "./style.css"; // External CSS file
 
 const Loader = () => {
   return (
@@ -1091,6 +1161,81 @@ const Loader = () => {
         <circle className="front" cx="17" cy="17" r="14"></circle>
       </svg>
     </div>
+  );
+};
+
+export default Loader;`
+//  loader 8
+const loader8_html = `<span className="loader-8"></span>`
+const loader8_css = `.loader-8,
+.loader-8:before,
+.loader-8:after {
+  border-radius: 50%;
+}
+
+.loader-8 {
+  position: absolute;
+  color: #2ba9e1;
+  font-size: 11px;
+  text-indent: -99999em;
+  width: 10em;
+  height: 10em;
+  scale: 0.275;
+  box-shadow: inset 0 0 0 1em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.loader-8:before,
+.loader-8:after {
+  position: absolute;
+  content: "";
+}
+
+.loader-8:before {
+  width: 5.2em;
+  height: 10.2em;
+  background: #2ba9e1;
+  border-radius: 10.2em 0 0 10.2em;
+  top: -0.1em;
+  left: -0.1em;
+  -webkit-transform-origin: 5.1em 5.1em;
+  transform-origin: 5.1em 5.1em;
+  -webkit-animation: load2 1.8s infinite ease 1.3s;
+  animation: load2 1.8s infinite ease 1.3s;
+}
+
+.loader-8:after {
+  width: 5.2em;
+  height: 10.2em;
+  background: #2ba9e1;
+  border-radius: 0 10.2em 10.2em 0;
+  top: -0.1em;
+  left: 4.9em;
+  -webkit-transform-origin: 0.1em 5.1em;
+  transform-origin: 0.1em 5.1em;
+  -webkit-animation: load2 2s infinite ease;
+  animation: load2 1.8s infinite ease;
+}
+
+@keyframes load2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}`;
+const loader8_react = `import React from "react";
+import "./style.css"; // External CSS file
+
+const Loader = () => {
+  return (
+    <span className="loader-8"></span>
   );
 };
 
