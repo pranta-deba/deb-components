@@ -3,6 +3,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import "./loaders.css";
 import { FaCheck, FaCopy } from "react-icons/fa";
+import { loadersArr } from "../../../lib/loaders";
 
 
 const Loaders = () => {
@@ -46,9 +47,87 @@ const Loaders = () => {
         }
 
     };
+    console.log(loadersArr);
 
     return (
         <div className="space-y-3">
+            {
+                loadersArr.map(loader => (
+                    <div key={loader.id} className="border-2 border-blue-300 p-4 md:p-6 rounded-md">
+                        <div className="flex gap-3">
+                            {
+                                loader.tabs.map((t, i) => (
+                                    <button
+                                        key={i + 1}
+                                        onClick={() => handleTabs(loader.name, t)}
+                                        className={`px-3 font-semibold py-2 rounded-md text-xs md:text-base ${tabs[0].tabs === t ? "effect-inner text-[#2BA9E1]" : "effect"}`}>{t}</button>
+                                ))
+                            }
+                            {/* <button
+                                onClick={() => handleTabs('tab1', 'previews')}
+                                className={`px-3 font-semibold py-2 rounded-md text-xs md:text-base ${tabs[0].tabs === "previews" ? "effect-inner text-[#2BA9E1]" : "effect"}`}>Previews</button>
+                            <button
+                                onClick={() => handleTabs('tab1', 'html css')}
+                                className={`px-3 font-semibold py-2 rounded-md text-xs md:text-base ${tabs[0].tabs === "html css" ? "effect-inner text-[#2BA9E1]" : "effect"}`}>HTML & CSS</button>
+                            <button
+                                onClick={() => handleTabs('tab1', 'react')}
+                                className={`px-3 font-semibold py-2 rounded-md text-xs md:text-base ${tabs[0].tabs === "react" ? "effect-inner text-[#2BA9E1]" : "effect"}`}>React</button> */}
+                        </div>
+                        <div className="mt-4 w-full min-h-[100px] flex justify-center items-center">
+                            {tabs[0].tabs === "previews" && <div className="loader-1"></div>}
+                            {tabs[0].tabs === "html css" && <div className="w-full min-h-[100px] max-h-[500px] overflow-y-auto p-4 scrollBar">
+                                <div className="space-y-3">
+                                    <div className="flex justify-between">
+                                        <p className="underline italic">index.html</p>
+                                        <button title="copy code"
+                                            onClick={() => copyToClipboard(loader1_html, 'copied1')}>
+                                            {copied1 ? <FaCheck /> : <FaCopy />}
+                                        </button>
+                                    </div>
+                                    <SyntaxHighlighter language="java" style={vs} customStyle={customColorInode}>
+                                        {loader1_html}
+                                    </SyntaxHighlighter>
+                                    <div className="flex justify-between">
+                                        <p className="underline italic">style.css</p>
+                                        <button title="copy code"
+                                            onClick={() => copyToClipboard(loader1_css, 'copied2')}>
+                                            {copied2 ? <FaCheck /> : <FaCopy />}
+                                        </button>
+                                    </div>
+                                    <SyntaxHighlighter language="htnl" style={vs} customStyle={customColorInode}>
+                                        {loader1_css}
+                                    </SyntaxHighlighter>
+                                </div>
+                            </div>}
+                            {tabs[0].tabs === "react" && <div className="w-full min-h-[100px] max-h-[500px] overflow-y-auto p-4 scrollBar">
+                                <div className="space-y-3">
+                                    <div className="flex justify-between">
+                                        <p className="underline italic">Loader.jsx</p>
+                                        <button title="copy code"
+                                            onClick={() => copyToClipboard(loader1_react, 'copied1')}>
+                                            {copied1 ? <FaCheck /> : <FaCopy />}
+                                        </button>
+                                    </div>
+                                    <SyntaxHighlighter language="java" style={vs} customStyle={customColorInode}>
+                                        {loader1_react}
+                                    </SyntaxHighlighter>
+                                    <div className="flex justify-between">
+                                        <p className="underline italic">style.css</p>
+                                        <button title="copy code"
+                                            onClick={() => copyToClipboard(loader1_css, 'copied2')}>
+                                            {copied2 ? <FaCheck /> : <FaCopy />}
+                                        </button>
+                                    </div>
+                                    <SyntaxHighlighter language="htnl" style={vs} customStyle={customColorInode}>
+                                        {loader1_css}
+                                    </SyntaxHighlighter>
+                                </div>
+                            </div>}
+                        </div>
+                    </div>
+                ))
+            }
+
             {/* Loader 1 */}
             <div className="border-2 border-blue-300 p-4 md:p-6 rounded-md">
                 <div className="flex gap-3">
@@ -117,7 +196,7 @@ const Loaders = () => {
             {/* Loader 1 end*/}
 
             {/* Loader 2 */}
-            <div className="border-2 border-blue-300 p-4 md:p-6 rounded-md">
+            {/* <div className="border-2 border-blue-300 p-4 md:p-6 rounded-md">
                 <div className="flex gap-3">
                     <button
                         onClick={() => handleTabs('tab2', 'previews')}
@@ -180,11 +259,11 @@ const Loaders = () => {
                         </div>
                     </div>}
                 </div>
-            </div>
+            </div> */}
             {/* Loader 2 end*/}
 
             {/* Loader 3 */}
-            <div className="border-2 border-blue-300 p-4 md:p-6 rounded-md">
+            {/* <div className="border-2 border-blue-300 p-4 md:p-6 rounded-md">
                 <div className="flex gap-3">
                     <button
                         onClick={() => handleTabs('tab3', 'previews')}
@@ -247,11 +326,11 @@ const Loaders = () => {
                         </div>
                     </div>}
                 </div>
-            </div>
+            </div> */}
             {/* Loader 3 end*/}
 
             {/* Loader 4 */}
-            <div className="border-2 border-blue-300 p-4 md:p-6 rounded-md">
+            {/* <div className="border-2 border-blue-300 p-4 md:p-6 rounded-md">
                 <div className="flex gap-3">
                     <button
                         onClick={() => handleTabs('tab4', 'previews')}
@@ -314,7 +393,7 @@ const Loaders = () => {
                         </div>
                     </div>}
                 </div>
-            </div>
+            </div> */}
             {/* Loader 4 end*/}
         </div>
     );

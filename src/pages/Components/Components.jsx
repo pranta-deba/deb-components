@@ -38,8 +38,8 @@ const Components = () => {
             </div>}
             
             {item === "loaders" && <div>
-                <Loaders />
             </div>}
+                <Loaders />
         </div>
     );
 };
