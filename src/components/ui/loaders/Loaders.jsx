@@ -39,6 +39,54 @@ const Loaders = () => {
             name: 'tab8',
             tabs: "previews"
         },
+        {
+            name: 'tab9',
+            tabs: "previews"
+        },
+        {
+            name: 'tab10',
+            tabs: "previews"
+        },
+        {
+            name: 'tab11',
+            tabs: "previews"
+        },
+        {
+            name: 'tab12',
+            tabs: "previews"
+        },
+        {
+            name: 'tab13',
+            tabs: "previews"
+        },
+        {
+            name: 'tab14',
+            tabs: "previews"
+        },
+        {
+            name: 'tab15',
+            tabs: "previews"
+        },
+        {
+            name: 'tab16',
+            tabs: "previews"
+        },
+        {
+            name: 'tab17',
+            tabs: "previews"
+        },
+        {
+            name: 'tab18',
+            tabs: "previews"
+        },
+        {
+            name: 'tab19',
+            tabs: "previews"
+        },
+        {
+            name: 'tab20',
+            tabs: "previews"
+        },
     ])
     const [copied1, setCopied1] = useState(false);
     const [copied2, setCopied2] = useState(false);
@@ -467,7 +515,6 @@ const Loaders = () => {
             </div>
             {/* Loader 6 end*/}
 
-
             {/* Loader 7 */}
             <div className="border-2 border-blue-300 p-4 md:p-6 rounded-md">
                 <div className="flex gap-3">
@@ -497,68 +544,66 @@ const Loaders = () => {
                             <circle className="front" cx="17" cy="17" r="14"></circle>
                         </svg>
                     </div>}
-                {tabs[6].tabs === "html css" && <div className="w-full min-h-[100px] max-h-[500px] overflow-y-auto p-4 scrollBar">
-                    <div className="space-y-3">
-                        <div className="flex justify-between">
-                            <p className="underline italic">index.html</p>
-                            <button title="copy code"
-                                onClick={() => copyToClipboard(loader7_html, 'copied1')}>
-                                {copied1 ? <FaCheck /> : <FaCopy />}
-                            </button>
+                    {tabs[6].tabs === "html css" && <div className="w-full min-h-[100px] max-h-[500px] overflow-y-auto p-4 scrollBar">
+                        <div className="space-y-3">
+                            <div className="flex justify-between">
+                                <p className="underline italic">index.html</p>
+                                <button title="copy code"
+                                    onClick={() => copyToClipboard(loader7_html, 'copied1')}>
+                                    {copied1 ? <FaCheck /> : <FaCopy />}
+                                </button>
+                            </div>
+                            <SyntaxHighlighter language="java" style={vs} customStyle={customColorInode}>
+                                {loader7_html}
+                            </SyntaxHighlighter>
+                            <div className="flex justify-between">
+                                <p className="underline italic">style.css</p>
+                                <button title="copy code"
+                                    onClick={() => copyToClipboard(loader7_css, 'copied2')}>
+                                    {copied2 ? <FaCheck /> : <FaCopy />}
+                                </button>
+                            </div>
+                            <SyntaxHighlighter language="html" style={vs} customStyle={customColorInode}>
+                                {loader7_css}
+                            </SyntaxHighlighter>
                         </div>
-                        <SyntaxHighlighter language="java" style={vs} customStyle={customColorInode}>
-                            {loader7_html}
-                        </SyntaxHighlighter>
-                        <div className="flex justify-between">
-                            <p className="underline italic">style.css</p>
-                            <button title="copy code"
-                                onClick={() => copyToClipboard(loader7_css, 'copied2')}>
-                                {copied2 ? <FaCheck /> : <FaCopy />}
-                            </button>
+                    </div>}
+                    {tabs[6].tabs === "react" && <div className="w-full min-h-[100px] max-h-[500px] overflow-y-auto p-4 scrollBar">
+                        <div className="space-y-3">
+                            <div className="flex justify-between">
+                                <p className="underline italic">Loader.jsx</p>
+                                <button title="copy code"
+                                    onClick={() => copyToClipboard(loader7_react, 'copied1')}>
+                                    {copied1 ? <FaCheck /> : <FaCopy />}
+                                </button>
+                            </div>
+                            <SyntaxHighlighter language="java" style={vs} customStyle={customColorInode}>
+                                {loader7_react}
+                            </SyntaxHighlighter>
+                            <div className="flex justify-between">
+                                <p className="underline italic">style.css</p>
+                                <button title="copy code"
+                                    onClick={() => copyToClipboard(loader7_css, 'copied2')}>
+                                    {copied2 ? <FaCheck /> : <FaCopy />}
+                                </button>
+                            </div>
+                            <SyntaxHighlighter language="htnl" style={vs} customStyle={customColorInode}>
+                                {loader7_css}
+                            </SyntaxHighlighter>
                         </div>
-                        <SyntaxHighlighter language="html" style={vs} customStyle={customColorInode}>
-                            {loader7_css}
-                        </SyntaxHighlighter>
-                    </div>
-                </div>}
-                {tabs[6].tabs === "react" && <div className="w-full min-h-[100px] max-h-[500px] overflow-y-auto p-4 scrollBar">
-                    <div className="space-y-3">
-                        <div className="flex justify-between">
-                            <p className="underline italic">Loader.jsx</p>
-                            <button title="copy code"
-                                onClick={() => copyToClipboard(loader7_react, 'copied1')}>
-                                {copied1 ? <FaCheck /> : <FaCopy />}
-                            </button>
-                        </div>
-                        <SyntaxHighlighter language="java" style={vs} customStyle={customColorInode}>
-                            {loader7_react}
-                        </SyntaxHighlighter>
-                        <div className="flex justify-between">
-                            <p className="underline italic">style.css</p>
-                            <button title="copy code"
-                                onClick={() => copyToClipboard(loader7_css, 'copied2')}>
-                                {copied2 ? <FaCheck /> : <FaCopy />}
-                            </button>
-                        </div>
-                        <SyntaxHighlighter language="htnl" style={vs} customStyle={customColorInode}>
-                            {loader7_css}
-                        </SyntaxHighlighter>
-                    </div>
-                </div>}
+                    </div>}
+                </div>
             </div>
-        </div>
-            {/* Loader 7 end*/ }
+            {/* Loader 7 end*/}
         </div >
     );
 };
-
 // custom css
 const customColorInode = {
     backgroundColor: "transparent",
     boxShadow: 'inset 4px 3px 3px 0px #b8c7dd, inset -2px -4px 4px 0px #fff'
 
 };
-
 // loader 1
 const loader1_html = `<div class="loader-1"></div>`
 const loader1_css = `.loader-1 {
@@ -601,7 +646,6 @@ const Loader = () => {
 
 export default Loader;
 `;
-
 // loader 2
 const loader2_html = `<div class="loader-2"></div>`
 const loader2_css = `.loader-2 {
@@ -636,7 +680,6 @@ const Loader = () => {
 
 export default Loader;
 `;
-
 // loader 3
 const loader3_html = `<div class="loader-3"></div>`
 const loader3_css = `.loader-3 {
@@ -680,7 +723,6 @@ const Loader = () => {
 
 export default Loader;
 `;
-
 //  loader 4
 const loader4_html = `<div class="loader-4"></div>`
 const loader4_css = `.loader-4 {
@@ -727,7 +769,6 @@ const Loader = () => {
 
 export default Loader;
 `;
-
 //  loader 5
 const loader5_html = `<div class="loader-5"></div>`
 const loader5_css = `.loader-5 {
