@@ -31,6 +31,14 @@ const Loaders = () => {
             name: 'tab6',
             tabs: "previews"
         },
+        {
+            name: 'tab7',
+            tabs: "previews"
+        },
+        {
+            name: 'tab8',
+            tabs: "previews"
+        },
     ])
     const [copied1, setCopied1] = useState(false);
     const [copied2, setCopied2] = useState(false);
@@ -458,7 +466,89 @@ const Loaders = () => {
                 </div>
             </div>
             {/* Loader 6 end*/}
+
+
+            {/* Loader 7 */}
+            <div className="border-2 border-blue-300 p-4 md:p-6 rounded-md">
+                <div className="flex gap-3">
+                    <button
+                        onClick={() => handleTabs('tab7', 'previews')}
+                        className={`px-3 font-semibold py-2 rounded-md text-xs md:text-base ${tabs[6].tabs === "previews" ? "effect-inner text-[#2BA9E1]" : "effect"}`}>Previews</button>
+                    <button
+                        onClick={() => handleTabs('tab7', 'html css')}
+                        className={`px-3 font-semibold py-2 rounded-md text-xs md:text-base ${tabs[6].tabs === "html css" ? "effect-inner text-[#2BA9E1]" : "effect"}`}>HTML & CSS</button>
+                    <button
+                        onClick={() => handleTabs('tab7', 'react')}
+                        className={`px-3 font-semibold py-2 rounded-md text-xs md:text-base ${tabs[6].tabs === "react" ? "effect-inner text-[#2BA9E1]" : "effect"}`}>React</button>
+                </div>
+                <div className="mt-4 w-full min-h-[100px] flex justify-center items-center">
+                    {tabs[6].tabs === "previews" && <div className="loader-7">
+                        <svg className="circle-outer" viewBox="0 0 86 86">
+                            <circle className="back" cx="43" cy="43" r="40"></circle>
+                            <circle className="front" cx="43" cy="43" r="40"></circle>
+                            <circle className="new" cx="43" cy="43" r="40"></circle>
+                        </svg>
+                        <svg className="circle-middle" viewBox="0 0 60 60">
+                            <circle className="back" cx="30" cy="30" r="27"></circle>
+                            <circle className="front" cx="30" cy="30" r="27"></circle>
+                        </svg>
+                        <svg className="circle-inner" viewBox="0 0 34 34">
+                            <circle className="back" cx="17" cy="17" r="14"></circle>
+                            <circle className="front" cx="17" cy="17" r="14"></circle>
+                        </svg>
+                    </div>}
+                {tabs[6].tabs === "html css" && <div className="w-full min-h-[100px] max-h-[500px] overflow-y-auto p-4 scrollBar">
+                    <div className="space-y-3">
+                        <div className="flex justify-between">
+                            <p className="underline italic">index.html</p>
+                            <button title="copy code"
+                                onClick={() => copyToClipboard(loader7_html, 'copied1')}>
+                                {copied1 ? <FaCheck /> : <FaCopy />}
+                            </button>
+                        </div>
+                        <SyntaxHighlighter language="java" style={vs} customStyle={customColorInode}>
+                            {loader7_html}
+                        </SyntaxHighlighter>
+                        <div className="flex justify-between">
+                            <p className="underline italic">style.css</p>
+                            <button title="copy code"
+                                onClick={() => copyToClipboard(loader7_css, 'copied2')}>
+                                {copied2 ? <FaCheck /> : <FaCopy />}
+                            </button>
+                        </div>
+                        <SyntaxHighlighter language="html" style={vs} customStyle={customColorInode}>
+                            {loader7_css}
+                        </SyntaxHighlighter>
+                    </div>
+                </div>}
+                {tabs[6].tabs === "react" && <div className="w-full min-h-[100px] max-h-[500px] overflow-y-auto p-4 scrollBar">
+                    <div className="space-y-3">
+                        <div className="flex justify-between">
+                            <p className="underline italic">Loader.jsx</p>
+                            <button title="copy code"
+                                onClick={() => copyToClipboard(loader7_react, 'copied1')}>
+                                {copied1 ? <FaCheck /> : <FaCopy />}
+                            </button>
+                        </div>
+                        <SyntaxHighlighter language="java" style={vs} customStyle={customColorInode}>
+                            {loader7_react}
+                        </SyntaxHighlighter>
+                        <div className="flex justify-between">
+                            <p className="underline italic">style.css</p>
+                            <button title="copy code"
+                                onClick={() => copyToClipboard(loader7_css, 'copied2')}>
+                                {copied2 ? <FaCheck /> : <FaCopy />}
+                            </button>
+                        </div>
+                        <SyntaxHighlighter language="htnl" style={vs} customStyle={customColorInode}>
+                            {loader7_css}
+                        </SyntaxHighlighter>
+                    </div>
+                </div>}
+            </div>
         </div>
+            {/* Loader 7 end*/ }
+        </div >
     );
 };
 
@@ -727,54 +817,242 @@ const Loader = () => {
 export default Loader;
 `;
 //  loader 7
-const loader7_html = `<div class="loader-7"></div>`
-const loader7_css = `.loader-5 {
-  scale: 0.65;
-  width: 56px;
-  height: 56px;
-  display: grid;
-  border-radius: 50%;
-  -webkit-mask: radial-gradient(farthest-side, #0000 40%, #2ba9e1 41%);
-  background: linear-gradient(
-        0deg,
-        #2ba9e1 50%,
-        rgb(143 68 253 / 0%) 0
-      )
-      center/4.5px 100%,
-    linear-gradient(90deg, #2ba9e1 50%, #2ba9e1 0)
-      center/100% 4.5px;
-  background-repeat: no-repeat;
-  animation: spinner-d3o0rx 1s infinite steps(12);
+const loader7_html = `<div class="loader-7">
+            <svg class="circle-outer" viewBox="0 0 86 86">
+              <circle class="back" cx="43" cy="43" r="40"></circle>
+              <circle class="front" cx="43" cy="43" r="40"></circle>
+              <circle class="new" cx="43" cy="43" r="40"></circle>
+    </svg>
+            <svg class="circle-middle" viewBox="0 0 60 60">
+              <circle class="back" cx="30" cy="30" r="27"></circle>
+              <circle class="front" cx="30" cy="30" r="27"></circle>
+    </svg>
+            <svg class="circle-inner" viewBox="0 0 34 34">
+              <circle class="back" cx="17" cy="17" r="14"></circle>
+              <circle class="front" cx="17" cy="17" r="14"></circle>
+    </svg>
+</div>`
+const loader7_css = `.loader-7 {
+  --background: #2ba9e1;
+  --front-color: #2ba9e1;
+  --back-color: rgba(14, 135, 255, 0.2);
+  --text-color: #414856;
+  width: 64px;
+  height: 64px;
+  scale: 0.4;
+  border-radius: 50px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.loader-5::before,
-.loader-5::after {
-  content: "";
-  grid-area: 1/1;
-  border-radius: 50%;
-  background: inherit;
-  opacity: 0.915;
-  transform: rotate(30deg);
+.loader-7 svg {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.loader-5::after {
-  opacity: 0.83;
-  transform: rotate(60deg);
+.loader-7 svg circle {
+  position: absolute;
+  fill: none;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform: rotate(-100deg);
+  transform-origin: center;
 }
 
-@keyframes spinner-d3o0rx {
+.loader-7 svg circle.back {
+  stroke: var(--back-color);
+}
+
+.loader-7 svg circle.front {
+  stroke: var(--front-color);
+}
+
+.loader-7 svg.circle-outer {
+  height: 86px;
+  width: 86px;
+}
+
+.loader-7 svg.circle-outer circle {
+  stroke-dasharray: 62.75 188.25;
+}
+
+.loader-7 svg.circle-outer circle.back {
+  animation: circle-outer135 1.8s ease infinite 0.3s;
+}
+
+.loader-7 svg.circle-outer circle.front {
+  animation: circle-outer135 1.8s ease infinite 0.15s;
+}
+
+.loader-7 svg.circle-middle {
+  height: 60px;
+  width: 60px;
+}
+
+.loader-7 svg.circle-middle circle {
+  stroke-dasharray: 42.5 127.5;
+}
+
+.loader-7 svg.circle-middle circle.back {
+  animation: circle-middle6123 1.8s ease infinite 0.25s;
+}
+
+.loader-7 svg.circle-middle circle.front {
+  animation: circle-middle6123 1.8s ease infinite 0.1s;
+}
+
+.loader-7 svg.circle-inner {
+  height: 34px;
+  width: 34px;
+}
+
+.loader-7 svg.circle-inner circle {
+  stroke-dasharray: 22 66;
+}
+
+.loader-7 svg.circle-inner circle.back {
+  animation: circle-inner162 1.8s ease infinite 0.2s;
+}
+
+.loader-7 svg.circle-inner circle.front {
+  animation: circle-inner162 1.8s ease infinite 0.05s;
+}
+
+.loader-7 .text {
+  position: absolute;
+  bottom: -40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: lowercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+.loader-7 .text::before,
+.loader-7 .text::after {
+  content: attr(data-text);
+}
+
+.loader-7 .text::before {
+  color: var(--text-color);
+}
+
+.loader-7 .text::after {
+  color: var(--front-color);
+  animation: text-animation76 3.6s ease infinite;
+  position: absolute;
+  left: 0;
+}
+
+@keyframes circle-outer135 {
+  0% {
+    stroke-dashoffset: 25;
+  }
+
+  25% {
+    stroke-dashoffset: 0;
+  }
+
+  65% {
+    stroke-dashoffset: 301;
+  }
+
+  80% {
+    stroke-dashoffset: 276;
+  }
+
   100% {
-    transform: rotate(1turn);
+    stroke-dashoffset: 276;
+  }
+}
+
+@keyframes circle-middle6123 {
+  0% {
+    stroke-dashoffset: 17;
+  }
+
+  25% {
+    stroke-dashoffset: 0;
+  }
+
+  65% {
+    stroke-dashoffset: 204;
+  }
+
+  80% {
+    stroke-dashoffset: 187;
+  }
+
+  100% {
+    stroke-dashoffset: 187;
+  }
+}
+
+@keyframes circle-inner162 {
+  0% {
+    stroke-dashoffset: 9;
+  }
+
+  25% {
+    stroke-dashoffset: 0;
+  }
+
+  65% {
+    stroke-dashoffset: 106;
+  }
+
+  80% {
+    stroke-dashoffset: 97;
+  }
+
+  100% {
+    stroke-dashoffset: 97;
+  }
+}
+
+@keyframes text-animation76 {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  50% {
+    clip-path: inset(0);
+  }
+
+  100% {
+    clip-path: inset(0 0 0 100%);
   }
 }`;
 const loader7_react = `import React from "react";
-import "./style.css"; // Import the CSS file
+import "./Loader.css"; // External CSS file
 
 const Loader = () => {
-  return <div class="loader-7"></div>; // Apply styles via className
+  return (
+    <div className="loader-7">
+      <svg className="circle-outer" viewBox="0 0 86 86">
+        <circle className="back" cx="43" cy="43" r="40"></circle>
+        <circle className="front" cx="43" cy="43" r="40"></circle>
+        <circle className="new" cx="43" cy="43" r="40"></circle>
+      </svg>
+      <svg className="circle-middle" viewBox="0 0 60 60">
+        <circle className="back" cx="30" cy="30" r="27"></circle>
+        <circle className="front" cx="30" cy="30" r="27"></circle>
+      </svg>
+      <svg className="circle-inner" viewBox="0 0 34 34">
+        <circle className="back" cx="17" cy="17" r="14"></circle>
+        <circle className="front" cx="17" cy="17" r="14"></circle>
+      </svg>
+    </div>
+  );
 };
 
-export default Loader;
-`
+export default Loader;`
 
 export default Loaders;

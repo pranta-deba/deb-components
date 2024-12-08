@@ -202,3 +202,205 @@
   }
 }
 /* Loader 6 end */
+
+
+/* Loader 7 start */
+.loader-7 {
+  --background: #2ba9e1;
+  --front-color: #2ba9e1;
+  --back-color: rgba(14, 135, 255, 0.2);
+  --text-color: #414856;
+  width: 64px;
+  height: 64px;
+  scale: 0.4;
+  border-radius: 50px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-7 svg {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-7 svg circle {
+  position: absolute;
+  fill: none;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform: rotate(-100deg);
+  transform-origin: center;
+}
+
+.loader-7 svg circle.back {
+  stroke: var(--back-color);
+}
+
+.loader-7 svg circle.front {
+  stroke: var(--front-color);
+}
+
+.loader-7 svg.circle-outer {
+  height: 86px;
+  width: 86px;
+}
+
+.loader-7 svg.circle-outer circle {
+  stroke-dasharray: 62.75 188.25;
+}
+
+.loader-7 svg.circle-outer circle.back {
+  animation: circle-outer135 1.8s ease infinite 0.3s;
+}
+
+.loader-7 svg.circle-outer circle.front {
+  animation: circle-outer135 1.8s ease infinite 0.15s;
+}
+
+.loader-7 svg.circle-middle {
+  height: 60px;
+  width: 60px;
+}
+
+.loader-7 svg.circle-middle circle {
+  stroke-dasharray: 42.5 127.5;
+}
+
+.loader-7 svg.circle-middle circle.back {
+  animation: circle-middle6123 1.8s ease infinite 0.25s;
+}
+
+.loader-7 svg.circle-middle circle.front {
+  animation: circle-middle6123 1.8s ease infinite 0.1s;
+}
+
+.loader-7 svg.circle-inner {
+  height: 34px;
+  width: 34px;
+}
+
+.loader-7 svg.circle-inner circle {
+  stroke-dasharray: 22 66;
+}
+
+.loader-7 svg.circle-inner circle.back {
+  animation: circle-inner162 1.8s ease infinite 0.2s;
+}
+
+.loader-7 svg.circle-inner circle.front {
+  animation: circle-inner162 1.8s ease infinite 0.05s;
+}
+
+.loader-7 .text {
+  position: absolute;
+  bottom: -40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: lowercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+.loader-7 .text::before,
+.loader-7 .text::after {
+  content: attr(data-text);
+}
+
+.loader-7 .text::before {
+  color: var(--text-color);
+}
+
+.loader-7 .text::after {
+  color: var(--front-color);
+  animation: text-animation76 3.6s ease infinite;
+  position: absolute;
+  left: 0;
+}
+
+@keyframes circle-outer135 {
+  0% {
+    stroke-dashoffset: 25;
+  }
+
+  25% {
+    stroke-dashoffset: 0;
+  }
+
+  65% {
+    stroke-dashoffset: 301;
+  }
+
+  80% {
+    stroke-dashoffset: 276;
+  }
+
+  100% {
+    stroke-dashoffset: 276;
+  }
+}
+
+@keyframes circle-middle6123 {
+  0% {
+    stroke-dashoffset: 17;
+  }
+
+  25% {
+    stroke-dashoffset: 0;
+  }
+
+  65% {
+    stroke-dashoffset: 204;
+  }
+
+  80% {
+    stroke-dashoffset: 187;
+  }
+
+  100% {
+    stroke-dashoffset: 187;
+  }
+}
+
+@keyframes circle-inner162 {
+  0% {
+    stroke-dashoffset: 9;
+  }
+
+  25% {
+    stroke-dashoffset: 0;
+  }
+
+  65% {
+    stroke-dashoffset: 106;
+  }
+
+  80% {
+    stroke-dashoffset: 97;
+  }
+
+  100% {
+    stroke-dashoffset: 97;
+  }
+}
+
+@keyframes text-animation76 {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  50% {
+    clip-path: inset(0);
+  }
+
+  100% {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+/* Loader 7 end */
