@@ -36,10 +36,9 @@ const Components = () => {
                     <img src="./banner.svg" alt="" className="" />
                 </div>
             </div>}
-            
-            {item === "loaders" && <div>
-            </div>}
-                <Loaders />
+
+            {item === "loaders" && <Loaders />}
+
         </div>
     );
 };

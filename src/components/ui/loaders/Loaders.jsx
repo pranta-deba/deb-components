@@ -1569,8 +1569,8 @@ const Loader = () => {
 export default Loader;
 `;
 //  loader 10
-const loader10_html = ``
-const loader10_css = ``;
-const loader10_react = ``
+// const loader10_html = ``
+// const loader10_css = ``;
+// const loader10_react = ``
 
 export default Loaders;
