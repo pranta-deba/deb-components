@@ -664,7 +664,79 @@ const Loaders = () => {
             </div>
             {/* Loader 8 end*/}
 
-            
+
+            {/* Loader 9 */}
+            <div className="border-2 border-blue-300 p-4 md:p-6 rounded-md">
+                <div className="flex gap-3">
+                    <button
+                        onClick={() => handleTabs('tab9', 'previews')}
+                        className={`px-3 font-semibold py-2 rounded-md text-xs md:text-base ${tabs[8].tabs === "previews" ? "effect-inner text-[#2BA9E1]" : "effect"}`}>Previews</button>
+                    <button
+                        onClick={() => handleTabs('tab9', 'html css')}
+                        className={`px-3 font-semibold py-2 rounded-md text-xs md:text-base ${tabs[8].tabs === "html css" ? "effect-inner text-[#2BA9E1]" : "effect"}`}>HTML & CSS</button>
+                    <button
+                        onClick={() => handleTabs('tab9', 'react')}
+                        className={`px-3 font-semibold py-2 rounded-md text-xs md:text-base ${tabs[8].tabs === "react" ? "effect-inner text-[#2BA9E1]" : "effect"}`}>React</button>
+                </div>
+                <div className="mt-4 w-full min-h-[100px] flex justify-center items-center">
+                    {tabs[8].tabs === "previews" && <div className="loader-9">
+                        <div className="box1"></div>
+                        <div className="box2"></div>
+                        <div className="box3"></div>
+                    </div>}
+                    {tabs[8].tabs === "html css" && <div className="w-full min-h-[100px] max-h-[500px] overflow-y-auto p-4 scrollBar">
+                        <div className="space-y-3">
+                            <div className="flex justify-between">
+                                <p className="underline italic">index.html</p>
+                                <button title="copy code"
+                                    onClick={() => copyToClipboard(loader9_html, 'copied1')}>
+                                    {copied1 ? <FaCheck /> : <FaCopy />}
+                                </button>
+                            </div>
+                            <SyntaxHighlighter language="java" style={vs} customStyle={customColorInode}>
+                                {loader9_html}
+                            </SyntaxHighlighter>
+                            <div className="flex justify-between">
+                                <p className="underline italic">style.css</p>
+                                <button title="copy code"
+                                    onClick={() => copyToClipboard(loader9_css, 'copied2')}>
+                                    {copied2 ? <FaCheck /> : <FaCopy />}
+                                </button>
+                            </div>
+                            <SyntaxHighlighter language="html" style={vs} customStyle={customColorInode}>
+                                {loader9_css}
+                            </SyntaxHighlighter>
+                        </div>
+                    </div>}
+                    {tabs[8].tabs === "react" && <div className="w-full min-h-[100px] max-h-[500px] overflow-y-auto p-4 scrollBar">
+                        <div className="space-y-3">
+                            <div className="flex justify-between">
+                                <p className="underline italic">Loader.jsx</p>
+                                <button title="copy code"
+                                    onClick={() => copyToClipboard(loader9_react, 'copied1')}>
+                                    {copied1 ? <FaCheck /> : <FaCopy />}
+                                </button>
+                            </div>
+                            <SyntaxHighlighter language="java" style={vs} customStyle={customColorInode}>
+                                {loader9_react}
+                            </SyntaxHighlighter>
+                            <div className="flex justify-between">
+                                <p className="underline italic">style.css</p>
+                                <button title="copy code"
+                                    onClick={() => copyToClipboard(loader9_css, 'copied2')}>
+                                    {copied2 ? <FaCheck /> : <FaCopy />}
+                                </button>
+                            </div>
+                            <SyntaxHighlighter language="htnl" style={vs} customStyle={customColorInode}>
+                                {loader9_css}
+                            </SyntaxHighlighter>
+                        </div>
+                    </div>}
+                </div>
+            </div>
+            {/* Loader 9 end*/}
+
+
         </div >
     );
 };
@@ -1240,5 +1312,265 @@ const Loader = () => {
 };
 
 export default Loader;`
+//  loader 9
+const loader9_html = ` <div class="loader-9">
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div class="box3"></div>
+</div>`
+const loader9_css = `.loader-9 {
+  position: absolute;
+  scale: 0.25;
+  width: 112px;
+  height: 112px;
+}
+
+.loader-9 .box1,
+.loader-9 .box2,
+.loader-9 .box3 {
+  border: 10px solid #2ba9e1;
+  border-radius: 56px;
+  box-sizing: border-box;
+  position: absolute;
+  display: block;
+}
+
+.loader-9 .box1 {
+  width: 112px;
+  height: 48px;
+  margin-top: 64px;
+  margin-left: 0px;
+  animation: abox1 2.4s 0.6s forwards ease-in-out infinite;
+}
+
+.loader-9 .box2 {
+  width: 48px;
+  height: 48px;
+  margin-top: 0px;
+  margin-left: 0px;
+  animation: abox2 2.4s 0.6s forwards ease-in-out infinite;
+}
+
+.loader-9 .box3 {
+  width: 48px;
+  height: 48px;
+  margin-top: 0px;
+  margin-left: 64px;
+  animation: abox3 2.4s 0.6s forwards ease-in-out infinite;
+}
+
+@keyframes abox1 {
+  0% {
+    width: 112px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 0px;
+  }
+
+  12.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 0px;
+  }
+
+  25% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 0px;
+  }
+
+  37.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 0px;
+  }
+
+  50% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 0px;
+  }
+
+  62.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 0px;
+  }
+
+  75% {
+    width: 48px;
+    height: 112px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  87.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  100% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+}
+
+@keyframes abox2 {
+  0% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  12.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  25% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  37.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  50% {
+    width: 112px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  62.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 64px;
+  }
+
+  75% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 64px;
+  }
+
+  87.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 64px;
+  }
+
+  100% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 64px;
+  }
+}
+
+@keyframes abox3 {
+  0% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 64px;
+  }
+
+  12.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 64px;
+  }
+
+  25% {
+    width: 48px;
+    height: 112px;
+    margin-top: 0px;
+    margin-left: 64px;
+  }
+
+  37.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 64px;
+  }
+
+  50% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 64px;
+  }
+
+  62.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 64px;
+  }
+
+  75% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 64px;
+  }
+
+  87.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 64px;
+  }
+
+  100% {
+    width: 112px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 0px;
+  }
+}`;
+const loader9_react = `import React from "react";
+import "./style.css"; // Import the CSS file
+
+const Loader = () => {
+  return (
+  <div className="loader-9">
+                <div className="box1"></div>
+                <div className="box2"></div>
+                <div className="box3"></div>
+     </div>; 
+    )
+};
+
+export default Loader;
+`;
+//  loader 10
+const loader10_html = ``
+const loader10_css = ``;
+const loader10_react = ``
 
 export default Loaders;
